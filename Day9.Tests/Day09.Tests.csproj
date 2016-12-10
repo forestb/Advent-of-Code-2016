@@ -60,9 +60,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Day9\Day9.csproj">
+    <ProjectReference Include="..\Day9\Day09.csproj">
       <Project>{c2c3f109-5eea-4727-af14-0d438e8a0324}</Project>
-      <Name>Day9</Name>
+      <Name>Day09</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
