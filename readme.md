@@ -27,3 +27,5 @@ I decided I wanted to make this a public repo after completing Day 8. The code s
     - ***Not*** solved in a "good" way. Woops.
   - Part 2 
     - Best solved recursively. Part 1 could not be extended for this. I'm happy with my solution for Part 2.
+- **Day 10: Balance Bots (Binary Tree/List Traversal)**
+  - I felt good about the solution. Initially I found the problem a bit difficult to understand, but once I did, it was fun to solve. For part 2, somehow my input data was "corrupted" (the last instruction existed twice on the same line and it broke my parser); this must have been due to an accidental copy/paste. Once identified, part 2 didn't require much work/time.
