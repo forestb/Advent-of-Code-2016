@@ -7,7 +7,7 @@ namespace Day10.Classes.Part1
 {
     public class InstructionProcessor
     {
-        public static void Process(string instructions, int lowValueToFind, int highValueToFind)
+        public static HashSet<Container> Process(string instructions, int lowValueToFind, int highValueToFind)
         {
             // parse the input
             List<object> instructionSet = InstructionParser.ParseInstructions(instructions);
@@ -47,7 +47,7 @@ namespace Day10.Classes.Part1
             // Load up the values
             foreach (ValueInstruction v in valueInstructions)
             {
-                FindContainerById(containers, v.TargetBotId).ContainerValues.InsertValue(v.Value);
+                Container.FindContainerById(containers, v.TargetBotId).ContainerValues.InsertValue(v.Value);
             }
 
             // Once the data is loaded, ensure there's only one node with 2 values
@@ -59,9 +59,9 @@ namespace Day10.Classes.Part1
             }
 
             // Begin the container traversal
-            while (ShouldContinueProcessing(containers))
+            while (Container.ShouldContinueProcessing(containers))
             {
-                Container containerToProcess = NextContainerToProcess(containers);
+                Container containerToProcess = Container.NextContainerToProcess(containers);
 
                 int lowValue = containerToProcess.ContainerValues.RemoveLowValue();
                 int highValue = containerToProcess.ContainerValues.RemoveHighValue();
@@ -72,21 +72,18 @@ namespace Day10.Classes.Part1
                     Console.WriteLine(containerToProcess.Id);
                 }
 
-                Container targetLowContainer = FindContainerById(containers, containerToProcess.TargetLowId);
+                Container targetLowContainer = Container.FindContainerById(containers, containerToProcess.TargetLowId);
                 targetLowContainer.ContainerValues.InsertValue(lowValue);
 
-                Container targetHighContainer = FindContainerById(containers, containerToProcess.TargetHighId);
+                Container targetHighContainer = Container.FindContainerById(containers, containerToProcess.TargetHighId);
                 targetHighContainer.ContainerValues.InsertValue(highValue);
             }
+
+            // Finished
+            // Return the containers for further processing
+            return containers;
         }
 
-        public static Container NextContainerToProcess(HashSet<Container> containers)
-            => containers.FirstOrDefault(c => c.ContainerValues.Count == 2);
-
-        public static bool ShouldContinueProcessing(HashSet<Container> containers)
-            => NextContainerToProcess(containers) != null;
-
-        public static Container FindContainerById(HashSet<Container> containers, string id)
-            => containers.FirstOrDefault(c => c.Id == id);
+        
     }
 }

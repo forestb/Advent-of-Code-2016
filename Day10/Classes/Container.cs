@@ -50,6 +50,8 @@ namespace Day10.Classes
             LowValue = null;
             return value;
         }
+
+        public int? PeekHighOrLow() => HighValue ?? LowValue;
     }
 
     public class Container
@@ -82,5 +84,14 @@ namespace Day10.Classes
         {
             return Id.GetHashCode();
         }
+
+        public static Container NextContainerToProcess(HashSet<Container> containers)
+            => containers.FirstOrDefault(c => c.ContainerValues.Count == 2);
+
+        public static bool ShouldContinueProcessing(HashSet<Container> containers)
+            => NextContainerToProcess(containers) != null;
+
+        public static Container FindContainerById(HashSet<Container> containers, string id)
+            => containers.FirstOrDefault(c => c.Id == id);
     }
 }

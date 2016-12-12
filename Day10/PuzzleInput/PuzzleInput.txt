@@ -228,4 +228,4 @@ bot 100 gives low to bot 98 and high to bot 88
 bot 83 gives low to bot 155 and high to bot 44
 bot 123 gives low to bot 33 and high to bot 195
 bot 183 gives low to bot 83 and high to bot 90
-bot 71 gives low to bot 152 and high to bot 121bot 71 gives low to bot 152 and high to bot 121
+bot 71 gives low to bot 152 and high to bot 121

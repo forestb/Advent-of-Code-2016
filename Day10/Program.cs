@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Common;
+using Day10.Classes;
 
 namespace Day10
 {
@@ -13,7 +12,20 @@ namespace Day10
 
         static void Main(string[] args)
         {
-            Classes.Part1.InstructionProcessor.Process(PuzzleInput, 17, 61);
+            // Day 10, Part 1
+            HashSet<Container> containers = Classes.Part1.InstructionProcessor.Process(PuzzleInput, 17, 61);
+
+            // Day 10, Part 2
+            Container bin0 = Container.FindContainerById(containers, "output:0");
+            Container bin1 = Container.FindContainerById(containers, "output:1");
+            Container bin2 = Container.FindContainerById(containers, "output:2");
+
+            Console.WriteLine($"bin0={bin0.ContainerValues.PeekHighOrLow()}");
+            Console.WriteLine($"bin1={bin1.ContainerValues.PeekHighOrLow()}");
+            Console.WriteLine($"bin2={bin2.ContainerValues.PeekHighOrLow()}");
+
+            Console.WriteLine(
+                $"Result={bin0.ContainerValues.PeekHighOrLow()*bin1.ContainerValues.PeekHighOrLow()*bin2.ContainerValues.PeekHighOrLow()}");
         }
     }
 }
