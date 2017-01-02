@@ -10,22 +10,21 @@ I decided I wanted to make this a public repo after completing Day 8. The code s
 - **Day 1:  No Time for a Taxicab  (Grid traversal)**
 - **Day 2: Bathroom Security (Grid traversal)**
 - **Day 3: Squares With Three Sides (Array traversal)**
-  - I remember thinking the Part 2 was *way* more difficult for me than it should have been.
+I remember thinking the Part 2 was *way* more difficult for me than it should have been.
 - **Day 4: Security Through Obscurity (String manipulation?)**
 - **Day 5: How About a Nice Game of Chess? (MD5 Hash library)**
-  - Fun!
+Fun!
 - **Day 6: Signals and Noise (Array manipulation)**
 - **Day 7: Internet Protocol Version 7 (Pattern detection)**
-  - This was the first time I had decided to use a `HashSet` object to solve a problem.  This was a fun problem and I'm relatively happy with the solution.
+This was the first time I had decided to use a `HashSet` object to solve a problem.  This was a fun problem and I'm relatively happy with the solution.
 - **Day 8: Two-Factor Authentication (2D Grid manipulation)**
-  - Part 1
-    - I felt good about the solution. I've had to somewhat reacquaint myself with 2D array traversal (row/column and i/j indexing)
-  - Part 2
-    - Very cool; I had already made a `Print();` method and noticed something looked interesting about the results from part 1.
+  - Part 1: I felt good about the solution. I've had to somewhat reacquaint myself with 2D array traversal (row/column and i/j indexing)
+  - Part 2: Very cool; I had already made a `Print();` method and noticed something looked interesting about the results from part 1.
 - **Day 9: Explosives in Cyberspace (Decompress encoded strings)**
-  - Part 1 
-    - ***Not*** solved in a "good" way. Woops.
-  - Part 2 
-    - Best solved recursively. Part 1 could not be extended for this. I'm happy with my solution for Part 2.
+  - Part 1: ***Not*** solved in a "good" way. Woops.
+  - Part 2: Best solved recursively. Part 1 could not be extended for this. I'm happy with my solution for Part 2.
 - **Day 10: Balance Bots (Binary Tree/List Traversal)**
-  - I felt good about the solution. Initially I found the problem a bit difficult to understand, but once I did, it was fun to solve. For part 2, somehow my input data was "corrupted" (the last instruction existed twice on the same line and it broke my parser); this must have been due to an accidental copy/paste. Once identified, part 2 didn't require much work/time.
+  I felt good about the solution. Initially I found the problem a bit difficult to understand, but once I did, it was fun to solve. For part 2, somehow my input data was "corrupted" (the last instruction existed twice on the same line and it broke my parser); this must have been due to an accidental copy/paste. Once identified, part 2 didn't require much work/time.
+- **Day 11: Part 1, solved; Part 2, unsolved***
+- **Day 12: Leonardo's Monorail (Execute "Assembly code")***
+ I went with the visitor pattern for this solution; albeit overengineered, I think it was elegant. The problem overall wasn't too difficult to approach, although I was a bit unsure of how to execute the `jnz` instruction at first if the source wasn't a register.
