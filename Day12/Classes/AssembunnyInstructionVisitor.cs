@@ -14,7 +14,7 @@ namespace Day12.Classes
         {
             Registers.Add("a", 0);
             Registers.Add("b", 0);
-            Registers.Add("c", 0);
+            Registers.Add("c", 1);
             Registers.Add("d", 0);
         }
 
@@ -80,6 +80,12 @@ namespace Day12.Classes
                 if (int.Parse(instruction.Source) != 0)
                 {
                     InstructionPointer += instruction.Offset;
+                }
+                else
+                {
+                    // the instruction is complete
+                    // point to the next instruction
+                    InstructionPointer++;
                 }
             }
         }
