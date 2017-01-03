@@ -25,6 +25,8 @@ This was the first time I had decided to use a `HashSet` object to solve a probl
   - Part 2: Best solved recursively. Part 1 could not be extended for this. I'm happy with my solution for Part 2.
 - **Day 10: Balance Bots (Binary Tree/List Traversal)**
   I felt good about the solution. Initially I found the problem a bit difficult to understand, but once I did, it was fun to solve. For part 2, somehow my input data was "corrupted" (the last instruction existed twice on the same line and it broke my parser); this must have been due to an accidental copy/paste. Once identified, part 2 didn't require much work/time.
-- **Day 11: Part 1, solved; Part 2, unsolved***
-- **Day 12: Leonardo's Monorail (Execute "Assembly code")***
+- **Day 11: Part 1, solved; Part 2, Aghhhhhh!!!!**
+- **Day 12: Leonardo's Monorail (Execute assembly code; it's like MIPS!)**
  I went with the visitor pattern for this solution; albeit overengineered, I think it was elegant. The problem overall wasn't too difficult to approach, although I was a bit unsure of how to execute the `jnz` instruction at first if the source wasn't a register.
+- ** Day 13: A Maze of Twisty Little Cubicles (Bit Masking & Maze/Grid Traversal)**
+Some of the grid traversal is kind of gross, but overall I think I had an efficient solution. *Note: This was the first time I've printed to the Console in color, ha!*
