@@ -11,25 +11,31 @@ namespace Day13
             // Start
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            PuzzleInput samplePuzzle = new PuzzleInput(
+            PuzzleData samplePuzzleInput = new PuzzleData(
                 rows: 7, 
                 columns: 10, 
                 favoriteNumber: 10, 
                 startingPoint: new Point(1, 1),
                 endingPoint: new Point(7, 4));
 
-            PuzzleInput puzzleInputPart1 = new PuzzleInput(
-                rows: 100,
-                columns: 100,
+            PuzzleData puzzleInput = new PuzzleData(
+                rows: 50,
+                columns: 50,
                 favoriteNumber: 1362,
                 startingPoint: new Point(1, 1),
                 endingPoint: new Point(31, 39));
 
             // Sample
-            //PuzzleProcessor.Process(samplePuzzle);
+            //PuzzleProcessor.Process(samplePuzzleInput);
 
             // Part 1
-            PuzzleProcessor.Process(puzzleInputPart1);
+            // Part 2
+            //puzzleInput.PrintGrid();
+            PuzzleProcessor.ProcessPart1(puzzleInput);
+            puzzleInput.PrintVisitedGrid();
+
+            PuzzleProcessor.ProcessPart2(puzzleInput);
+            puzzleInput.PrintVisitedGrid();
 
             // Finished
             watch.Stop();

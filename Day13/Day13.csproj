@@ -42,9 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CoordinateCalculator.cs" />
-    <Compile Include="Classes\PuzzleInput.cs" />
+    <Compile Include="Classes\PuzzleData.cs" />
     <Compile Include="Classes\PuzzleProcessor.cs" />
-    <Compile Include="Extensions\PointExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
