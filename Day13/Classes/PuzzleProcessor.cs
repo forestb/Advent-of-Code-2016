@@ -45,8 +45,6 @@ namespace Day13.Classes
             }
         }
 
-        
-
         /// <summary>
         /// We're looking for the maximum number of distinct x,y coordinate pairs which we could possibly visit in 50
         /// steps.  It makes sense that the grid should never have a width or height greater than 50 for this.  Instead
