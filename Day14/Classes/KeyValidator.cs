@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Day14.Classes
 {
@@ -10,7 +6,7 @@ namespace Day14.Classes
     {
         // private
         // http://regexr.com/
-        private static readonly Regex TRIPLE_FINDER_REGEX = new Regex(@"([a-e0-9])\1\1");
+        private static readonly Regex TRIPLE_FINDER_REGEX = new Regex(@"([a-f0-9])\1\1");
 
         // public methods
         public static bool HasTriple(string source) => TRIPLE_FINDER_REGEX.IsMatch(source.ToLowerInvariant());

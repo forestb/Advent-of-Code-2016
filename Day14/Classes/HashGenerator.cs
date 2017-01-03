@@ -11,17 +11,47 @@ namespace Day14.Classes
         public static string GetHashedString(uint input, string salt)
         {
             byte[] inputBytes = Encoding.ASCII.GetBytes(String.Concat(salt, input.ToString()));
+
             byte[] hash = MD5.ComputeHash(inputBytes);
 
-            // step 2, convert byte array to hex string
+            return GetString(hash);
+        }
+
+        public static string GetRidiculouslyHashedString(uint input, string salt)
+        {
+            byte[] inputBytes = Encoding.ASCII.GetBytes(String.Concat(salt, input.ToString()));
+
+            byte[] hash = MD5.ComputeHash(inputBytes);
+
+            // Added for Part2 of puzzle
+            for (int i = 0; i < 2016; i++)
+            {
+                hash = MD5.ComputeHash(GetAsciiBytes(GetString(hash)));
+            }
+
+            return GetString(hash);
+        }
+
+        #region Helper Methods
+
+        private static string GetString(byte[] bytes)
+        {
             StringBuilder sb = new StringBuilder();
 
-            foreach (byte t in hash)
+            foreach (byte t in bytes)
             {
-                sb.Append(t.ToString("X2"));
+                // x2 = lowercase; X2 = uppercase
+                sb.Append(t.ToString("x2"));
             }
 
             return sb.ToString();
         }
+
+        private static byte[] GetAsciiBytes(string s)
+        {
+            return Encoding.ASCII.GetBytes(s);
+        }
+
+        #endregion
     }
 }

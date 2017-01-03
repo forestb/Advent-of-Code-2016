@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Day14.Classes;
 
 namespace Day14
@@ -17,11 +14,17 @@ namespace Day14
             string samplePuzzleData = "abc";
             string puzzleData = "ihaygndm";
 
-            // Sample
-            //PuzzleProcessor.Process(samplePuzzleData);
+            // Sample, Part 1
+            //PuzzleProcessor.ProcessPart1(samplePuzzleData);
 
             // Day 13, Part 1
-            PuzzleProcessor.Process(puzzleData);
+            PuzzleProcessor.ProcessPart1(puzzleData);
+
+            // Sample, Part 2
+            //PuzzleProcessor.ProcessPart2(samplePuzzleData);
+
+            // Day 13, Part 2
+            PuzzleProcessor.ProcessPart2(puzzleData);
 
             // Finished
             watch.Stop();
