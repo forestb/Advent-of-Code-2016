@@ -35,6 +35,7 @@ I decided I wanted to make this a public repo after completing Day 8. The code s
   I felt good about the solution. Initially I found the problem a bit difficult to understand, but once I did, it was fun to solve. For part 2, somehow my input data was "corrupted" (the last instruction existed twice on the same line and it broke my parser); this must have been due to an accidental copy/paste. Once identified, part 2 didn't require much work/time.
 
 - **Day 11: Part 1, solved; Part 2, Aghhhhhh!!!!**
+  Difficulty: 10+
 
 - **Day 12: Leonardo's Monorail (Execute assembly code; it's like MIPS!)**
   I went with the visitor pattern for this solution; albeit overengineered, I think it was elegant. The problem overall wasn't too difficult to approach, although I was a bit unsure of how to execute the `jnz` instruction at first if the source wasn't a register.
@@ -52,3 +53,7 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 - **Day 15: Timing is Everything (Math? Modulo operator; Logic)**
   Difficulty: 1
   An easy one for a change. Fun. The most difficult part is conceptualizing the story.
+
+- **Day 16: Dragon Checksum (String traversal; Logic)**
+  Difficulty: 2, maybe 3
+  Fun; Nothing too tricky here. Was unfamiliar with a Dragon Curve.
