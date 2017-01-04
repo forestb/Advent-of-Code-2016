@@ -57,3 +57,7 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 - **Day 16: Dragon Checksum (String traversal; Logic)**
   Difficulty: 2, maybe 3.
   Fun; Nothing too tricky here. Was unfamiliar with a Dragon Curve.
+
+- **Day 17: Two Steps Forward (Shortest path, longest path; Hashing; Regular expressions)**
+  Difficulty: 4, maybe 5.
+  A really fun problem with a little bit of everything.
