@@ -7,25 +7,21 @@ namespace Day15.Classes
     {
         public static void Process(List<Disc> discs)
         {
-            int time = 1;
+            int time = 0;
             int sum = 0;
 
-            while (true)
+            do
             {
+                sum = 0;
+                time++;
+
                 foreach (Disc d in discs)
                 {
                     sum += d.CalculatePositionAtTime(time);
                 }
+            } while (sum != 0);
 
-                if (sum == 0)
-                {
-                    Console.WriteLine($"With the {discs.Count} discs, press the button at t={time}.");
-                    break;
-                }
-
-                sum = 0;
-                time++;
-            }
+            Console.WriteLine($"With the {discs.Count} discs, press the button at t={time}.");
         }
     }
 }
