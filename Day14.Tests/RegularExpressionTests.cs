@@ -2,6 +2,7 @@
 using Common;
 using Day14.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using HashGenerator = Day14.Classes.HashGenerator;
 
 namespace Day14.Tests
 {

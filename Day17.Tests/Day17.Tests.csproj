@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{101B326A-4AA7-457B-BAE1-FEFCD7C876AD}</ProjectGuid>
+    <ProjectGuid>{B5559D3D-BFA8-420E-9994-17A694BD2751}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Common.Tests</RootNamespace>
-    <AssemblyName>Common.Tests</AssemblyName>
+    <RootNamespace>Day17.Tests</RootNamespace>
+    <AssemblyName>Day17.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,14 +53,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="HashGeneratorTests.cs" />
-    <Compile Include="PointTests.cs" />
+    <Compile Include="TravelerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{7c98d757-a476-4667-ab47-9eaff324c8e5}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Day17\Day17.csproj">
+      <Project>{94c29428-3b29-4f27-a286-ab9c60389068}</Project>
+      <Name>Day17</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
