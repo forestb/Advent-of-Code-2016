@@ -51,9 +51,9 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
   There may be a bug in my code (fix indicated with a `todo` within the code): The candidate queue could be emptied if no candidates exist for comparison within a 1000 value range, and we're on our last cnadidate. This bug didn't appear in the test input or real input, so I'm not going to inspect it further.
 
 - **Day 15: Timing is Everything (Math? Modulo operator; Logic)**
-  Difficulty: 1
+  Difficulty: 1.
   An easy one for a change. Fun. The most difficult part is conceptualizing the story.
 
 - **Day 16: Dragon Checksum (String traversal; Logic)**
-  Difficulty: 2, maybe 3
+  Difficulty: 2, maybe 3.
   Fun; Nothing too tricky here. Was unfamiliar with a Dragon Curve.
