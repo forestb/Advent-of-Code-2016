@@ -5,7 +5,7 @@ namespace Day15.Classes
 {
     public class PuzzleProcessor
     {
-        public static void Process_Part1(List<Disc> discs)
+        public static void Process(List<Disc> discs)
         {
             int time = 1;
             int sum = 0;
@@ -19,7 +19,7 @@ namespace Day15.Classes
 
                 if (sum == 0)
                 {
-                    Console.WriteLine($"Press the button at t={time}.");
+                    Console.WriteLine($"With the {discs.Count} discs, press the button at t={time}.");
                     break;
                 }
 

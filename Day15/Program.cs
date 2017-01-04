@@ -31,10 +31,15 @@ namespace Day15
             };
 
             // Sample, Part 1
-            //PuzzleProcessor.Process_Part1(samplePuzzleInput);
+            PuzzleProcessor.Process(samplePuzzleInput);
 
             // Live Data, Part 1
-            PuzzleProcessor.Process_Part1(puzzleInput);
+            PuzzleProcessor.Process(puzzleInput);
+
+            // Live Data, Part 2
+            puzzleInput.Add(new Disc(7, 11, 0));
+
+            PuzzleProcessor.Process(puzzleInput);
 
             // Finished
             watch.Stop();
