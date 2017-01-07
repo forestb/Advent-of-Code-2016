@@ -61,3 +61,7 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 - **Day 17: Two Steps Forward (Shortest path, longest path; Hashing; Regular expressions)**
   Difficulty: 4, maybe 5.
   A really fun problem with a little bit of everything.
+
+- **Day 18: Like a Rogue (Computational efficiency)**
+  Difficulty, 4 or 5.
+  I started off on the "wrong" path. I recognized early on that circuit minimization could apply here, but I had already started down the road of using complex classes and was able to solve Part 1 without it. Part 2 demanded more efficiency, hence the rewrite from `Day18` to `Day18.Better`.  There was something satisfying about the massive speed increase between the two solutions.
