@@ -10,7 +10,15 @@ namespace Day18.Classes
             Floor f = new Floor(pd.PuzzleInput, pd.RowCount);
 
             // Print it out
-            f.Print();
+            if (pd.RowCount < 100)
+            {
+                f.Print();
+            }
+            else
+            {
+                Console.WriteLine($"{pd.RowCount} are too many rows to print (visualize) the grid.  Skipping Print();");
+            }
+            
             Console.WriteLine($"There are {f.SafeTileCount} safe tiles.");
         }
     }

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Day18.Classes;
+using Day18.Better.Classes;
 
-namespace Day18
+namespace Day18.Better
 {
     class Program
     {
@@ -15,7 +12,7 @@ namespace Day18
 
             // Sample Puzzle Input 1
             PuzzleData samplePuzzleData1 = new PuzzleData("..^^.", 3);
-            PuzzleProcessor.Process(samplePuzzleData1);
+            PuzzleProcessor.Process(samplePuzzleData1, true);
             Console.WriteLine($"{watch.ElapsedMilliseconds / 1000}s/{watch.ElapsedMilliseconds} ms elapsed so far.");
             Console.WriteLine();
 
