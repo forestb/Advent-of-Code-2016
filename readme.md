@@ -65,3 +65,16 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 - **Day 18: Like a Rogue (Computational efficiency)**
   Difficulty, 4 or 5.
   I started off on the "wrong" path. I recognized early on that circuit minimization could apply here, but I had already started down the road of using complex classes and was able to solve Part 1 without it. Part 2 demanded more efficiency, hence the rewrite from `Day18` to `Day18.Better`.  There was something satisfying about the massive speed increase between the two solutions.
+
+- **Day 19: An Elephant Named Joseph (Algorithms?)**
+  Difficulty, 6.
+  Part 1 was concise and easy to understand. I knew there must be a mathematical way to approach it, and found what I thought was a somewhat good approach. Namely, decide how many participants/who to move based on whether or not there was an odd or even number. Part 2 was trickier. I went with a brute force `List` approach. The code was concise, but somewhat inefficient (`O(n^2)`). I noticed the following (somewhat linear) results with respect to input size:
+|  Size   |Time (seconds)|
+|---------|--------------|
+|  100,000|             1|
+|  200,000|             6|
+|  300,000|            14|
+|  400,000|            25|
+|  500,000|            45|
+|1,000,000|           163|
+As a result, with an input size of ~`3,000,000`, it took 1,690 seconds (~27 minutes) to run. I'm not proud of this, but it did produce the correct answer. It might be worth revisiting and figuring out a more optimal solution at some point. The difficulty rating is somewhat based on the lack of achieving a better solution.

@@ -6,7 +6,7 @@ namespace Day19.Classes
 {
     public class PuzzleProcessor
     {
-        public static void Process(int elfCount)
+        public static void Process_Part1(int elfCount)
         {
             List<Elf> currentRound = new List<Elf>(elfCount);
 
@@ -33,6 +33,29 @@ namespace Day19.Classes
             }
 
             Console.WriteLine($"With {elfCount} elves, elf #{currentRound.FirstOrDefault()?.Position} gets all the presents.");
+        }
+
+        public static void Process_Part2(int elfCount)
+        {
+            List<uint> elves = new List<uint>();
+
+            // initialize the list
+            for (uint i = 1; i <= elfCount; i++)
+            {
+                elves.Add(i);
+            }
+
+            while (elves.Count > 1)
+            {
+                // remove the elf across from the current elf
+                elves.RemoveAt((int)Math.Floor(elves.Count / 2.0));
+
+                // remove the current elf and stick him back at the end of the list
+                elves.Add(elves[0]);
+                elves.RemoveAt(0);
+            }
+
+            Console.WriteLine($"With {elfCount} elves, for the newer game, elf #{elves.FirstOrDefault()} gets all the presents.");
         }
     }
 }

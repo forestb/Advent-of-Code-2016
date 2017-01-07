@@ -10,14 +10,20 @@ namespace Day19
             // Start
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            // Sample Data
-            //for (int i = 1; i <= 13; i++)
-            //{
-            //    PuzzleProcessor.Process(i);
-            //}
+            int samplePuzzleInput = 5;
+            int puzzleInput = 3001330;
 
-            // Live Data
-            PuzzleProcessor.Process(3001330);
+            // Sample Data, Part 1
+            PuzzleProcessor.Process_Part1(samplePuzzleInput);
+
+            // Live Data, Part 1
+            PuzzleProcessor.Process_Part1(puzzleInput);
+
+            // Sample Data, Part 2
+            PuzzleProcessor.Process_Part2(samplePuzzleInput);
+
+            // Test Data, Part 2
+            //PuzzleProcessor.Process_Part2(puzzleInput);
 
             // Finished
             watch.Stop();
