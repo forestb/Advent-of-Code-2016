@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\IpRangeSets.cs" />
+    <Compile Include="Classes\IpRangeSet.cs" />
+    <Compile Include="Classes\PuzzleCalculator.cs" />
     <Compile Include="Classes\PuzzleProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

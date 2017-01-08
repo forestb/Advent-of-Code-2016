@@ -1,38 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Day20.Classes
 {
     public class PuzzleProcessor
     {
-        public static void Process(string puzzleInput)
+        public static void Process_Part1(string puzzleInput, Int64 maxValidValue)
         {
             // Parse the input
-            List<IpRangeSets> ipRangeSets = new List<IpRangeSets>();
+            List<IpRangeSet> ipRangeSets = new List<IpRangeSet>();
 
-            string[] parsedPuzzleInput = puzzleInput.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string s in parsedPuzzleInput)
+            foreach (string s in ParsedPuzzleInput(puzzleInput))
             {
-                ipRangeSets.Add(new IpRangeSets(s));
+                ipRangeSets.Add(new IpRangeSet(s));
             }
-
-            // Print the IP address range
-            // ipRangeSets.ForEach(x => Console.WriteLine($"{x.RangeStart} to {x.RangeEnd}"));
-
-            // Determine the lowest valued IP which is not blocked
-            Int64 min = 0;
-            Int64 max = 4294967295;
 
             var orderedIpRanges = ipRangeSets.OrderBy(x => x.RangeStart).ToList();
 
             for (int i = 0; i < orderedIpRanges.Count; i++)
             {
-                Int64 currentLast = orderedIpRanges[i].RangeEnd;
-                Int64 nextStart = orderedIpRanges[i+1].RangeStart;
+                int next = i + 1;
 
+                Int64 currentLast = orderedIpRanges[i].RangeEnd;
+                Int64 nextStart = (next >= orderedIpRanges.Count) ? maxValidValue : orderedIpRanges[next].RangeStart;
                 Int64 difference = nextStart - currentLast;
 
                 if (difference > 1)
@@ -43,5 +34,23 @@ namespace Day20.Classes
                 }
             }
         }
+
+        public static void Process_Part2(string puzzleInput, Int64 maxValidValue)
+        {
+            // Parse the input
+            List<IpRangeSet> ipRangeSets = new List<IpRangeSet>();
+
+            foreach (string s in ParsedPuzzleInput(puzzleInput))
+            {
+                ipRangeSets.Add(new IpRangeSet(s));
+            }
+
+            PuzzleCalculator puzzleCalculate = new PuzzleCalculator(ipRangeSets, maxValidValue);
+
+            Console.WriteLine($"There are {puzzleCalculate.SitesAllowedCount} values allowed.");
+        }
+
+        private static string[] ParsedPuzzleInput(string puzzleInput) =>
+            puzzleInput.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
     }
 }

@@ -68,7 +68,7 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 
 - **Day 19: An Elephant Named Joseph (Algorithms?)**
   Difficulty, 6.
-  Part 1 was concise and easy to understand. I knew there must be a mathematical way to approach it, and found what I thought was a somewhat good approach. Namely, decide how many participants/who to move based on whether or not there was an odd or even number. Part 2 was trickier. I went with a brute force `List` approach. The code was concise, but somewhat inefficient (`O(n^2)`). I noticed the following (somewhat linear) results with respect to input size:
+  Part 1 was concise and easy to understand. I knew there must be a mathematical way to approach it, and found what I thought was a somewhat good approach. Namely, decide how many participants/who to move based on whether or not there was an odd or even number. Part 2 was trickier. I went with a brute force `List` approach. The code was concise, but somewhat inefficient (`O(n) + O(n^2)`). I noticed the following (somewhat linear) results with respect to input size:
   
   |   Size    | Time (seconds) |
   | --------- | -------------- |
@@ -80,3 +80,6 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
   | 1,000,000 |            163 |
 
   As a result, with an input size of ~`3,000,000`, it took 1,690 seconds (~27 minutes) to run. I'm not proud of this, but it did produce the correct answer. It might be worth revisiting and figuring out a more optimal solution at some point. The difficulty rating is somewhat based on the lack of achieving a better solution.
+
+- **Day 20: Firewall Rules (Algorithms; Computation efficiency; Linq)**
+Difficulty, 8. If I had assigned only Part 1 a difficulty rating, it would have been a 2 or 3.  Thanks Part 2.  Part 2 was deceptively difficult.  I must not have been in a position in which a list contains non-unique, overlapping ranges and I need to get the distinct range of values, efficiently. I'm mostly satisfied with my solution, although I'd be interested to see more simple/efficient solutions. Execution time for part 2 was ~`75ms`.
