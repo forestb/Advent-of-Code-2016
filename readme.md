@@ -69,12 +69,14 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 - **Day 19: An Elephant Named Joseph (Algorithms?)**
   Difficulty, 6.
   Part 1 was concise and easy to understand. I knew there must be a mathematical way to approach it, and found what I thought was a somewhat good approach. Namely, decide how many participants/who to move based on whether or not there was an odd or even number. Part 2 was trickier. I went with a brute force `List` approach. The code was concise, but somewhat inefficient (`O(n^2)`). I noticed the following (somewhat linear) results with respect to input size:
-|  Size   |Time (seconds)|
-|---------|--------------|
-|  100,000|             1|
-|  200,000|             6|
-|  300,000|            14|
-|  400,000|            25|
-|  500,000|            45|
-|1,000,000|           163|
-As a result, with an input size of ~`3,000,000`, it took 1,690 seconds (~27 minutes) to run. I'm not proud of this, but it did produce the correct answer. It might be worth revisiting and figuring out a more optimal solution at some point. The difficulty rating is somewhat based on the lack of achieving a better solution.
+  
+  |   Size    | Time (seconds) |
+  | --------- | -------------- |
+  |   100,000 |              1 |
+  |   200,000 |              6 |
+  |   300,000 |             14 |
+  |   400,000 |             25 |
+  |   500,000 |             45 |
+  | 1,000,000 |            163 |
+
+  As a result, with an input size of ~`3,000,000`, it took 1,690 seconds (~27 minutes) to run. I'm not proud of this, but it did produce the correct answer. It might be worth revisiting and figuring out a more optimal solution at some point. The difficulty rating is somewhat based on the lack of achieving a better solution.
