@@ -12,6 +12,11 @@ namespace Common
             return s.ToLowerInvariant().Contains(value.ToLowerInvariant());
         }
 
+        public static bool StartsWithLowerInvariant(this string s, string value)
+        {
+            return s.ToLowerInvariant().StartsWith(value.ToLowerInvariant());
+        }
+
         public static string Reverse(this string s)
         {
             char[] charArray = s.ToCharArray();
