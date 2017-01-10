@@ -83,3 +83,6 @@ Some of the grid traversal is kind of gross, but overall I think I had an effici
 
 - **Day 20: Firewall Rules (Algorithms; Computation efficiency; Linq)**
 Difficulty, 8. If I had assigned only Part 1 a difficulty rating, it would have been a 2 or 3.  Thanks Part 2.  Part 2 was deceptively difficult.  I must not have been in a position in which a list contains non-unique, overlapping ranges and I need to get the distinct range of values, efficiently. I'm mostly satisfied with my solution, although I'd be interested to see more simple/efficient solutions. Execution time for part 2 was ~`75ms`.
+
+- **Day 21: Scrambled Letters and Hash**
+Dificulty, 6, 7, or 8. One of my favorites so far, but a surprising amount of effort, with a really cool twist on part 2. Lot's of fun, super cool, but fairly involved. I used ***String Extensions*** for creating the transformation functions. The input parsing was pretty rudimentary, but that part is not really interesting *(See Day 12 for an example* ***visitor*** *pattern implementation)*.
