@@ -1,53 +1,41 @@
 ﻿using System;
+using Common;
+using static System.Decimal;
 
 namespace Day22.Classes
 {
     public class Node
     {
-        public string OriginalInstruction { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public string Id { get; set; }
+        public Point CurrentPoint { get; set; }
+        public int X => CurrentPoint.X;
+        public int Y => CurrentPoint.Y;
         public int Size { get; set; }
         public int Used { get; set; }
-        public int Available { get; set; }
-        public decimal UsePercentage { get; }
+        public int Available => Size - Used;
+        public int PercentUsed => Available == 0 ? 0 : ToInt32(((decimal) Used/(decimal) Available)*100M);
 
+        #region Constructors
 
-
-        public Node(string originalInstruction, int x, int y, int size, int used, int available)
+        public Node(Point p, int size, int used)
         {
-            OriginalInstruction = originalInstruction;
-            X = x;
-            Y = y;
+            Id = p.ToString();
+            CurrentPoint = p;
             Size = size;
             Used = used;
-            Available = available;
-            UsePercentage = ((decimal)used / (decimal)size) * 100;
         }
 
-        public Node(string originalInstruction, int x, int y, int size, int used)
-        {
-            OriginalInstruction = originalInstruction;
-            X = x;
-            Y = y;
-            Size = size;
-            Used = used;
-            Available = size - used;
-            UsePercentage = ((decimal)used / (decimal)size) * 100;
-        }
+        #endregion
 
-        public Node(Node n) : this(n.OriginalInstruction, n.X, n.Y, n.Size, n.Used, n.Available)
-        {
-            
-        }
+        #region Overrides
 
         public override bool Equals(object obj)
         {
-            Node node = obj as Node;
+            var node = obj as Node;
 
             if (node != null)
             {
-                return (this.X == node.X && this.Y == node.Y);
+                return this.CurrentPoint.X == node.CurrentPoint.X && this.CurrentPoint.Y == node.CurrentPoint.Y && this.Id == node.Id;
             }
 
             return false;
@@ -60,26 +48,35 @@ namespace Day22.Classes
 
         public override string ToString()
         {
-            return OriginalInstruction;
+            return $"point={CurrentPoint};id={Id}";
         }
 
-        public static Node Parse(string input)
+        #endregion
+
+        public Point Up => GetNeighborLocation(Direction.UP);
+        public Point Right => GetNeighborLocation(Direction.RIGHT);
+        public Point Down => GetNeighborLocation(Direction.DOWN);
+        public Point Left => GetNeighborLocation(Direction.LEFT);
+
+        private Point GetNeighborLocation(Direction d)
         {
-            // an input string looks like
-            // Filesystem              Size  Used  Avail  Use%
-            // /dev/grid/node-x0-y0     88T   66T    22T   75%
-            string[] results = input.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
+            switch (d)
+            {
+                case (Direction.UP):
+                    return new Point(CurrentPoint.X, CurrentPoint.Y - 1);
 
-            string[] coordinateStrings = results[0].Split(new[] {"-"}, StringSplitOptions.RemoveEmptyEntries);
+                case (Direction.RIGHT):
+                    return new Point(CurrentPoint.X + 1, CurrentPoint.Y);
 
-            return new Node(
-                input,
-                int.Parse(coordinateStrings[1].Replace("x", string.Empty)),
-                int.Parse(coordinateStrings[2].Replace("y", string.Empty)),
-                int.Parse(results[1].Replace("T", string.Empty)),
-                int.Parse(results[2].Replace("T", string.Empty)),
-                int.Parse(results[3].Replace("T", string.Empty))
-                );
+                case (Direction.DOWN):
+                    return new Point(CurrentPoint.X, CurrentPoint.Y + 1);
+
+                case (Direction.LEFT):
+                    return new Point(CurrentPoint.X - 1, CurrentPoint.Y);
+
+                default:
+                    throw new Exception("Invalid direction.");
+            }
         }
     }
 }

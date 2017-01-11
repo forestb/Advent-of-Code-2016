@@ -58,5 +58,18 @@ namespace Common.Tests
         }
 
         #endregion
+
+        // Validate struct vs class points
+        [TestMethod]
+        public void TestMethod_Validate_Points_Reference_Test_1()
+        {
+            Point p1 = new Point(1, 1);
+            Point p2 = p1;
+
+            p1.X++;
+
+            // If Point is a struct, we should be able to modify p1 without it affecting p2
+            Assert.IsFalse(p1.Equals(p2));
+        }
     }
 }

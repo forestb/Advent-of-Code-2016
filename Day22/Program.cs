@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Common;
 using Day22.Classes;
 
@@ -10,6 +7,9 @@ namespace Day22
     class Program
     {
         public static string PuzzleInput => PuzzleInputHelper.ReadFile("PuzzleInput.txt");
+        public static string PuzzleInputReduced => PuzzleInputHelper.ReadFile("PuzzleInputReduced.txt");
+        public static string SamplePuzzleInput => PuzzleInputHelper.ReadFile("SamplePuzzleInput.txt");
+        public static string SamplePuzzleInputSmaller => PuzzleInputHelper.ReadFile("SamplePuzzleInputSmaller.txt");
 
         static void Main(string[] args)
         {
@@ -17,7 +17,19 @@ namespace Day22
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
             // Part 1
-            PuzzleProcessor.Process(PuzzleInput);
+            PuzzleProcessor.Process_Part1(PuzzleInput);
+            Console.WriteLine();
+
+            // Part 2, Sample (Smaller)
+            //...PuzzleProcessor.Process_Part2(SamplePuzzleInputSmaller);
+
+            // Part 2, Sample
+            PuzzleProcessor.Process_Part2(SamplePuzzleInput);
+            Console.WriteLine();
+
+            // Part 2, Real Input
+            PuzzleProcessor.Process_Part2_Math(PuzzleInput);
+            Console.WriteLine();
 
             // Finished
             watch.Stop();

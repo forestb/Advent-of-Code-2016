@@ -41,13 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Direction.cs" />
+    <Compile Include="Classes\Grid.cs" />
+    <Compile Include="Classes\GridRules.cs" />
     <Compile Include="Classes\Node.cs" />
     <Compile Include="Classes\NodeExtensions.cs" />
+    <Compile Include="Classes\NodeParser.cs" />
     <Compile Include="Classes\PuzzleProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PuzzleInput\PuzzleInputReduced.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PuzzleInput\SamplePuzzleInputSmaller.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PuzzleInput\SamplePuzzleInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PuzzleInput\PuzzleInput.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
