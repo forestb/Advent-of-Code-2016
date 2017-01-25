@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Classes\AssembunnyInstructionVisitor.cs" />
     <Compile Include="Classes\Common.cs" />
+    <Compile Include="Classes\InstructionClasses\AddInstruction.cs" />
+    <Compile Include="Classes\InstructionClasses\NoOpInstruction.cs" />
+    <Compile Include="Classes\InstructionClasses\MultiplyInstruction.cs" />
     <Compile Include="Classes\InstructionClasses\CopyInstruction.cs" />
     <Compile Include="Classes\InstructionClasses\DecrimentInstruction.cs" />
     <Compile Include="Classes\InstructionClasses\IncrimentInstruction.cs" />
@@ -52,11 +55,21 @@
     <Compile Include="Classes\PuzzleProcessor.cs" />
     <Compile Include="Interfaces\IInstruction.cs" />
     <Compile Include="Interfaces\IInstructionVisitor.cs" />
+    <Compile Include="Interfaces\IToggle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PuzzleInput\PuzzleInput.txt">
+    <Content Include="PuzzleInput\PuzzleInput_Part1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PuzzleInput\PuzzleInput_Part2_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PuzzleInput\PuzzleInput_Part2_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PuzzleInput\PuzzleInput_Part2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="PuzzleInput\PuzzleInput_Sample.txt">

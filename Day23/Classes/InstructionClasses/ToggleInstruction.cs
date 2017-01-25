@@ -19,5 +19,10 @@ namespace Day23.Classes.InstructionClasses
         {
             visitor.Visit(this);
         }
+
+        public override string ToString()
+        {
+            return $"tgl {Source}";
+        }
     }
 }

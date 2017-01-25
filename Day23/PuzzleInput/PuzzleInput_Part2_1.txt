@@ -1,0 +1,22 @@
+﻿cpy 12 a
+cpy a b
+dec b
+cpy a d
+cpy 0 a
+cpy b c
+nop+
+nop+
+mul+ c d a
+cpy+ 0 c
+cpy+ 0 d
+//inc a
+//dec c
+//jnz c -2
+//dec d
+//jnz d -5
+dec b
+cpy b c
+cpy c d
+dec d
+inc c
+jnz d -2

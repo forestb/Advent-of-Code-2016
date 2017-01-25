@@ -120,3 +120,51 @@ H....................................G
 ......................................
 ```
 Leading to the equation: `(E.X - W.X + 1) + E.Y + (WIDTH - W.X + 1) + (WIDTH - 1) * 5`. Even the equation isn't generic enough (it crashes the sample input), which related expecting the empty space to be "below" the "wall". That said, you could run this project, and the programming, generic implementation does solve the puzzle for the sample input correctly (and efficeintly, `~300ms`); the mathematical method isn't generic enough, but will solve for my input. (The approach should be similar for other inputs, however).
+
+- **Day 23: Safe Cracking (Assembly language simulation; Peephole Optimization; Critical thinking?)**
+Super fun. Difficulty: 8, 9, maybe 10. I started by porting over the solution from `Day 12`. Part 1 was tricker than I expected because in addition to implementing the new `tgl x` instruction, I hadn't accounted for the possibility `jnz <int> <register>` formatted instruction (in `Day 12`, the first argument was always a register). This was also the first time (?) you couldn't simply copy the puzzle input verbatim. If you didn't read the problem fully, you might skip prepending an initial `cpy 7 a` instruction.
+&nbsp;
+Part 2 was completely unexpected. The problem states, not so subtly that you'll need to implement a custom `multiply` instruction or you'll be stuck in a loop you'll never get out of (not infinite, but extremely slow). Part 2 doesn't give you much direction, which is new in my experience with AoC.
+&nbsp;
+I started by printing out a subset of the instruction set, up to the first couple of `jnz` instructions, to see how the pattern was repeating. It was tricky enough to identify (maybe it's just a mindset I haven't been in for awhile?), but once I did, in addition to implementing a `mul` instruction, I implemented an `add` and `nop` instruction (this did not come to me immediately, unfortunately); the purpose of a `nop` instruction is to say, "ignore me, move on", but to retain the original order/line numbers for the "source code", essential for compatibility with `jnz` commands.
+&nbsp;
+Below is my input set. The commented out (`//`) parts are what was replace with the instructions (suffixed with `+`):
+```
+cpy 12 a
+cpy a b
+dec b
+cpy a d
+cpy 0 a
+cpy b c
+//the nested loops here essentially set 'c' and 'd' to zero, and increase 'a' by 'c'*'d'
+//inc a
+//dec c
+//jnz c -2
+//dec d
+//jnz d -5
+nop+
+nop+
+mul+ c d a
+cpy+ 0 c
+cpy+ 0 d
+dec b
+cpy b c
+cpy c d
+//this loop increases 'c' by 'd', and leaves 'd' at 0
+//dec d
+//inc c
+//jnz d -2
+nop+
+add+ 0 d c
+cpy+ 0 d
+tgl c
+cpy -16 c
+jnz 1 c
+cpy 86 c
+jnz 77 d
+inc a
+inc d
+jnz d -2
+inc c
+jnz c -5
+```

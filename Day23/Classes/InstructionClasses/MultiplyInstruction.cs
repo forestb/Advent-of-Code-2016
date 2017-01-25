@@ -2,19 +2,21 @@
 
 namespace Day23.Classes.InstructionClasses
 {
-    public class CopyInstruction : Instruction, IInstruction
+    public class MultiplyInstruction : Instruction, IInstruction
     {
-        public string Source { get; set; }
+        public string Source1 { get; set; }
+        public string Source2 { get; set; }
         public string Destination { get; set; }
 
-        public CopyInstruction(string originalInstruction) : base(originalInstruction)
+        public MultiplyInstruction(string originalInstruction) : base(originalInstruction)
         {
             this.OriginalInstruction = originalInstruction;
 
             string[] results = Common.SplitOnWhiteSpace(originalInstruction);
 
-            Source = results[1];
-            Destination = results[2];
+            Source1 = results[1];
+            Source2 = results[2];
+            Destination = results[3];
         }
 
         public void Accept(IInstructionVisitor visitor)
@@ -24,7 +26,7 @@ namespace Day23.Classes.InstructionClasses
 
         public override string ToString()
         {
-            return $"cpy {Source} {Destination}";
+            return $"mul {Source1} {Source2} {Destination}";
         }
     }
 }

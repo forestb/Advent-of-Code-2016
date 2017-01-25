@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Common;
 using Day23.Classes;
 
@@ -6,22 +7,27 @@ namespace Day23
 {
     class Program
     {
-        public static string PuzzleInput => PuzzleInputHelper.ReadFile("PuzzleInput.txt");
+        public static string PuzzleInputPart1 => PuzzleInputHelper.ReadFile("PuzzleInput_Part1.txt");
+        public static string PuzzleInputPart2 => PuzzleInputHelper.ReadFile("PuzzleInput_Part2.txt");
+        public static string PuzzleInputPart21 => PuzzleInputHelper.ReadFile("PuzzleInput_Part2_1.txt");
+        public static string PuzzleInputPart22 => PuzzleInputHelper.ReadFile("PuzzleInput_Part2_2.txt");
+        public static string PuzzleInputPart23 => PuzzleInputHelper.ReadFile("PuzzleInput_Part2_3.txt");
         public static string SamplePuzzleInput => PuzzleInputHelper.ReadFile("PuzzleInput_Sample.txt");
 
         static void Main(string[] args)
         {
             // Start
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            Stopwatch watch = Stopwatch.StartNew();
 
             // Sample
-            PuzzleProcessor.Process(SamplePuzzleInput);
+            //PuzzleProcessor.Process(SamplePuzzleInput);
 
             // Part 1
-            //string[] parsedPuzzleInput = PuzzleInput.Split(new[] { Environment.NewLine },
-            //    StringSplitOptions.RemoveEmptyEntries);
+            PuzzleProcessor.Process(PuzzleInputPart1);
+            Console.WriteLine();
 
-            //PuzzleProcessor.Process(parsedPuzzleInput);
+            // Part 2
+            PuzzleProcessor.Process(PuzzleInputPart2);
 
             // Finished
             watch.Stop();

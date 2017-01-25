@@ -1,4 +1,5 @@
-﻿cpy a b
+﻿cpy 7 a
+cpy a b
 dec b
 cpy a d
 cpy 0 a
@@ -11,8 +12,8 @@ jnz d -5
 dec b
 cpy b c
 cpy c d
-dec d
-inc c
+inc c d
+dec d d
 jnz d -2
 tgl c
 cpy -16 c
